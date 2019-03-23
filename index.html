@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="style.css">
+	<title>Calculator</title>
+</head>
+<body>
+	<script>
+		function insert(num){
+			document.form.textView.value = document.form.textView.value + num;
+		}	
+		function equal(){
+			var exp = document.form.textView.value;
+			if(exp){
+				document.form.textView.value = eval(exp);
+			}
+		}
+		function clean(){
+			document.form.textView.value= "";
+		}
+		function back(){
+			var exp = document.form.textView.value;
+			document.form.textView.value = exp.substring(0, exp.length-1);
+		}
+	</script>
+	
+	<form action="" name="form">
+		<input type="text" placeholder="" value="" class="textView" name="textView">
+		<div id="outer">
+		<div class="all">
+		<div class="first_line">
+			<input type="button" value="C" name="c" id="c" onclick="clean()">
+			<input type="button" value="<" name="delete" id="delete" onclick="back()">
+			<input type="button" value="%" name="percent" id="percent" onclick="insert('%')">
+			<input type="button" value="/" name="divide" id="divide" onclick="insert('/')">
+		</div>
+		<div class="second_line">
+			<input type="button" value="7" name="seven" id="seven" onclick="insert(7)">
+			<input type="button" value="8" name="eight" id="eight" onclick="insert(8)">
+			<input type="button" value="9" name="nine" id="nine" onclick="insert(9)">
+			<input type="button" value="*" name="multiple" id="multiple" onclick="insert('*')">
+		</div>
+		<div class="third_line">
+			<input type="button" value="4" name="four" id="four" onclick="insert(4)">
+			<input type="button" value="5" name="five" id="five" onclick="insert(5)">
+			<input type="button" value="6" name="six" id="six" onclick="insert(6)">
+			<input type="button" value="-" name="minus" id="minus" onclick="insert('-')">
+		</div>
+		<div class="fourth_line">
+			<input type="button" value="1" name="one" id="one" onclick="insert(1)">
+			<input type="button" value="2" name="two" id="two" onclick="insert(2)">
+			<input type="button" value="3" name="three" id="three" onclick="insert(3)">
+			<input type="button" value="+" name="plus" id="plus" onclick="insert('+')">
+		</div>
+		<div class="fifth_line">
+			<input type="button" value="0" name="zero" id="zero" onclick="insert(0)">
+			<input type="button" value="." name="dot" id="dot" onclick="insert('.')">
+			<input type="button" value=" " name="space" id="dot" onclick="insert(' ')">
+			<input type="button" value="=" name="submit" id="submit" onclick="equal()">
+		</div>
+		</div>
+		</div>
+	</form>
+
+
+	
+</body>
+</html>
